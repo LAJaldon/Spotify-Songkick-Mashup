@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    body.eventsPage
+       div.artistEvents
+        if upcomingEvents.totalEntries === 0
+            h1 #{query} has no upcoming events
+        else 
+            h1 #{query} has #{upcomingEvents.totalEntries} events coming up
+            each i in upcomingEvents.results.event
+                div.eventListings
+                    h1 Event: #{i.displayName}
+                    h1 Status: #{i.status}
+                    h1 Date: #{i.start.date}
+                    h1 Time: #{i.start.time}
+                    h1 Performers:  
+                    each j in i.performance   
+                        a(href= `/artist?artist=${j.displayName}`)
+                            h2.performers #{j.displayName}
+                    h1 Location: #{i.location.city}
+                    h1 Venue: #{i.venue.displayName}
+                    a(href = i.uri)
+                        button.ui.huge.orange.button Buy Tickets
+
+
+
+        

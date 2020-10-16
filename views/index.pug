@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  body.homePage
+    div.homeContent
+      p #{title}
+    div.searchArtistContainer
+          h2.searchLabel Search for Artist 
+          form.searchArtist.ui.big.form(action= '/search' method = 'get')
+            input.searchBox(type='text' placeholder = 'Artist...' name = 'artist')
+            button.searchButton.ui.button(type = 'submit') Submit
+    div.searchRelatedArtistContainer 
+          h2.recommendLabel Want to listen to new music? 
+          h2.recommendSecondLabel Name an artist and we'll recommend artists whose music you might like
+          form.searchRelatedArtist.ui.big.form(action= '/search/relatedartist' method = 'get')
+            input.searchRelatedArtistBox(type='text' placeholder = 'Artist You Like...' name = 'artist')
+            button.searchRelatedArtistButton.ui.button(type = 'submit') Submit

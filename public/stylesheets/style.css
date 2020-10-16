@@ -1,0 +1,151 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: black;
+}
+
+a {
+  color: white;
+}
+
+/* puts artist name in center */
+.homeContent {
+  color: black;
+  background-color: white;
+  margin-right: 37%;
+  margin-left: 40%;
+  font-size: 300%;
+}
+
+.searchArtistContainer{
+  position: absolute;
+  top: 30%;
+  left: 35%;
+}
+
+.searchBox{
+  display: inline-block;
+}
+
+.searchButton.ui.button{
+  display: inline-block;
+}
+
+
+.searchRelatedArtistContainer{
+  position: absolute;
+  top: 55%;
+  left: 35%;
+}
+
+.container, .p{
+  text-align: center;
+  align-content: center;
+}
+
+.searchResult {
+  color: white;
+}
+
+.ui.teal.button {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+.header {
+  color: white;
+}
+
+.results {
+  color: white;
+  align-content: center;
+}
+
+.artistName{
+  color: white;
+}
+.artistImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+}
+
+.searchQueryImage{
+  border-radius: 50%;
+}
+
+.red.huge.statistic{
+  font-size: 200%;
+}
+
+.eventButton{
+  margin-left: 30%;
+  margin-top: -25%;
+  float: right;
+}
+
+.query{
+  margin-left: 9%;
+  color: white;
+}
+
+.artistQuery{
+  margin-bottom: 2%;
+  padding-bottom: 2%;
+  border-bottom: 10px solid gray;
+  display: left;
+}
+
+
+.searchQueryResult{
+  float: left;
+}
+
+.homePage{
+  background-image: url('../images/colourful_concert.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.noEventsFound, .artistEvents{
+  color: white;
+}
+
+
+.eventListings{
+  margin-top: 3%;
+  padding-bottom: 5%;
+  border-bottom: 2px solid chocolate;
+}
+
+.performers{
+  color: aqua;
+}
+
+
+.trackImage{
+  display: inline-block;
+}
+
+.trackName{
+  display: inline-block;
+  position: relative;
+  left: 2%;
+}
+
+.trackDetails{
+  margin-top: 2%;
+  padding-bottom: 1%;
+  border-bottom: 2px solid chocolate;
+}
+
+.albumDetails{
+  padding: 5%;
+}
+
+.noRelatedArtistsError{
+  color: white;
+}

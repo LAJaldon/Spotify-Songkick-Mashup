@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    - const noImage= '/images/No_image_available.png';
+    div.searchResult
+        h1.header Results
+        if body.length === 0
+            ui.red.huge.statistic No results found for #{inputEntered}
+        else 
+        each i in body
+                    - const artistUrl = `/artist?artist=${i.name}`;
+                    if i.images.length > 0
+                        div.artistQuery
+                            h1.query #{i.name}
+                            a(href = artistUrl)
+                                img.searchQueryImage(src = i.images[0].url width = 400 height = 400)
+                        .eventButton
+                                a(href = `/events/${i.name}`)
+                                     button.ui.huge.orange.button Find Upcoming Events
+                    else 
+                        div.artistQuery
+                            h1.query #{i.name}
+                            a(href = artistUrl)
+                                img.searchQueryImage(src = noImage width = 400 height = 400)
+                        .eventButton
+                            a(href = `/events/${i.name}`)
+                                 button.ui.huge.orange.button Find Upcoming Events
+
+        
+
+

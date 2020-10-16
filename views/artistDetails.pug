@@ -1,0 +1,45 @@
+extends layout
+
+block content 
+    - const noImage= '/images/No_image_available.png';
+        ui.container
+            ui.results 
+                if images.length > 0
+                    img.artistImage(src=images[0].url width = 400 height = 400) 
+                else 
+                    img.artistImage(src = noImage  width = 400 height = 400)
+                h1.artistName
+                    .value #{ name }
+                h2 Followers: 
+                    h3
+                        .value #{ followers }
+                h2 Popularity:
+                    h3 
+                        .value #{ popularity }
+                h2 Genres:
+                    h3 
+                        if genres.length === 0
+                            h3 Not Specified
+                        else 
+                                h2.genres #{ genres }       
+                h2 Top Tracks:
+                    each i in tracks 
+                        .trackDetails
+                            if i.album.images.length > 0
+                                img.trackImage(src = i.album.images[0].url width= 70 height = 70) 
+                            else 
+                                img.trackImage(src = noImage width = 70 height = 70)
+                            a(href = i.preview_url)
+                                p.trackName #{i.name}
+                h2 Albums:  
+                    .albumDetails
+                        each j in albumItems
+                                if j.images.length > 0
+                                    a(href = j.external_urls.spotify)
+                                        img.albumImage(src = j.images[0].url width = 130 height = 130)
+                                else 
+                                    a(href = j.external_urls.spotify)
+                                        img.albumImage(src = noImage width = 130 height = 130)
+                               
+
+
